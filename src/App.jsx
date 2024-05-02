@@ -3,6 +3,7 @@ import Signup from "./pages/SignupPage";
 import Login from "./pages/LoginPage";
 import Navbar from './components/Navbar';
 import './App.css';
+import Content from "./components/Content";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       <Navbar/>
     <Routes>
-      <Route path="/" element={<h1> Home page</h1>}/>
+      <Route path="/" element={<Content/>}/>
       {/* auth:
        - Signup
        - Login

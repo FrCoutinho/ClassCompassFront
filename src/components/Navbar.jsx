@@ -28,19 +28,6 @@ const Navbar = () => {
             </ul>
           </li>
 
-          {/* Job Offer */}
-          <li className="nav-item">  
-            <Link to="/joboffer" className="nav-links">
-              Job Offer
-            </Link>
-          </li>
-
-          {/* Help */}
-          <li className="nav-item">
-            <Link to="/help" className="nav-links">
-              ?
-            </Link>
-          </li>
           {/* Signup */}
           <li className="nav-item signup">  {/* Added new class name for styling */}
             <Link to="/signup" className="nav-links">

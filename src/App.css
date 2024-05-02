@@ -210,7 +210,7 @@ body.bodyLogin {
   font-family: "Poppins";
   font-size: 18px;
   margin: 0;
-  height: 100vh;
+  height: 80px;
   background:white;
   color: #fff;
 }
@@ -339,3 +339,20 @@ a {
   scale: 0 0;
   visibility: hidden;
 }
+
+/*-----Content-------*/
+
+.Content {
+  background-image: url(imagens/Content2.jpg); 
+  width: cover;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Content h1 {
+  position: center;
+}
+                                  
+
+                                        
