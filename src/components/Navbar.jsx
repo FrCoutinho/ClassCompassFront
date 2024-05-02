@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import navbar from '../imagens/navbar.jpg'
 
 const Navbar = () => {
   return (
     <div className="bodyNav">  
       <nav>
-        <h1><Link to="/">CC</Link></h1>
+       <Link to="/"><img src={navbar} alt="navbar" height={50}/> </Link>
         <ul className="menu">  
           {/* Classes Dropdown */}
           <li className="nav-item dropdown">  

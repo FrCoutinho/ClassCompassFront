@@ -105,7 +105,7 @@ body.bodyLogin {
 }
 
 
-                                                   /*-----Login------*/
+/*-----------------------------------------------Login------*/
 /* Styles for the body element */
 body.bodyLogin {
   margin: 0;
@@ -205,9 +205,9 @@ body.bodyLogin {
 
 
 
-                                                    /*------Navbar------*/
+ /*-------------------------------------------------Navbar------*/
 .bodyNav {
-  font-family: "Poppins";
+  font-family: 'Learning Curve';
   font-size: 18px;
   margin: 0;
   height: 80px;
@@ -340,19 +340,101 @@ a {
   visibility: hidden;
 }
 
-/*-----Content-------*/
+/*-------------------------------------Content-------*/
 
 .Content {
-  background-image: url(imagens/Content2.jpg); 
-  width: cover;
-  height: 300px;
+  border:2px solid #0b0a0a;
+  height: 400px;
+  background-image: url(imagens/Content2.jpg);
   background-position: center;
   background-repeat: no-repeat;
+
 }
 
-.Content h1 {
-  position: center;
+.Maintitle {
+  font-family:'Learning Curve' ;
+  font-size: 100px;
+  text-align: center;
 }
-                                  
+.Content2{
+  border: 2px solid black;
+  padding: 100px;
+  
+}
 
-                                        
+/*------------------------------- AddTeacher--------- */
+
+/* styles.css */
+.teacher-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.teacher-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+}
+
+.teacher-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.teacher-input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.teacher-submit {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.teacher-submit:hover {
+  background-color: #0056b3;
+}
+
+.teacher-message {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+}
+
+ /*-----footer-------*/
+
+ .footer {
+  background-color: #f2f2f2; /* Adjust background color as desired */
+  padding: 1rem 2rem; /* Adjust padding for spacing */
+  text-align: center; /* Center the content within the footer */
+}
+
+.copyright {
+  font-size: 0.8rem; /* Adjust font size for smaller footprint */
+  color: #333; /* Adjust text color as desired */
+}
+
+.copyright a {
+  color: #666; /* Adjust link color as desired */
+  text-decoration: none; /* Remove underline initially */
+}
+
+.copyright a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  cursor: pointer; /* Indicate clickable behavior */
+}
