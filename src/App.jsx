@@ -1,5 +1,7 @@
-import { Route, Routes } from "react-router-dom"
-import Signup from "./pages/SignupPages"
+import { Route, Routes } from "react-router-dom";
+import Signup from "./pages/SignupPage";
+import Login from "./pages/LoginPage";
+import './App.css';
 
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
        - Signup
        - Login
         */}
-        <Route path='/signup' element={<Signup/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/login" element={<Login/>}/>
       {/* Route to display all Professor */}
       {/* Route to create one Professor */}
       {/* Route to display all Course */}
