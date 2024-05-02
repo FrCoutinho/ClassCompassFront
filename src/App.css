@@ -343,11 +343,12 @@ a {
 /*-------------------------------------Content-------*/
 
 .Content {
-  border:2px solid #0b0a0a;
+ 
   height: 400px;
   background-image: url(imagens/Content2.jpg);
   background-position: center;
   background-repeat: no-repeat;
+  
 
 }
 
@@ -357,11 +358,17 @@ a {
   text-align: center;
 }
 .Content2{
-  border: 2px solid black;
-  padding: 100px;
+  padding: 50px;
   
 }
-
+.Maintitle2{
+  font-family: 'KG Primary Penmanship';
+  font-size: 30px;
+}
+.Maintitle3{
+  font-family: 'KG Primary Penmanship';
+  font-size: 20px;
+}
 /*------------------------------- AddTeacher--------- */
 
 /* styles.css */
