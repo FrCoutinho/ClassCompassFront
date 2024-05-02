@@ -1,15 +1,15 @@
-
-/*------Login and Signup------*/
-
-body.bodySignup {
+/* Styles for both signup and login forms */
+body.bodySignup,
+body.bodyLogin {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; 
+  font-family: sans-serif;
   background-color: #f8f9fa;
 }
 
-/* Styles for the backgroundSignup element */
-.backgroundSignup {
+/* Styles for the background element */
+.backgroundSignup,
+.backgroundLogin {
   position: fixed;
   top: 0;
   left: 0;
@@ -18,11 +18,12 @@ body.bodySignup {
   background-image: url("path/to/your/image.jpg"); /* Replace with your background image path */
   background-size: cover;
   background-position: center;
-  opacity: 0.3; 
+  opacity: 0.3;
 }
 
-/* Styles for the cardSignup element */
-.cardSignup {
+/* Styles for the card element */
+.cardSignup,
+.cardLogin {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -35,29 +36,33 @@ body.bodySignup {
 }
 
 /* Styles for the h2 element */
-.cardSignup h2 {
+.cardSignup h2,
+.cardLogin h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: #f06c99; 
+  color: #f06c99; /* Use the same color for both forms */
 }
 
 /* Styles for the error message paragraph */
-.cardSignup p {
-  color: #ff4d69; 
+.cardSignup p,
+.cardLogin p {
+  color: #ff4d69; /* Use the same color for both forms */
   margin-bottom: 10px;
 }
 
-/* Styles for the formSignup element */
-.cardSignup form {
+/* Styles for the form element */
+.cardSignup form,
+.cardLogin form {
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
 }
 
 /* Styles for the input elements */
-.cardSignup input {
+.cardSignup input,
+.cardLogin input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -65,20 +70,40 @@ body.bodySignup {
 }
 
 /* Styles for the button element */
-.cardSignup button {
+.cardSignup button,
+.cardLogin button {
   padding: 10px 20px;
-  background-color: #f06c99; 
+  background-color: #f06c99; /* Use the same color for both forms */
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.2s ease-in-out; 
+  transition: background-color 0.2s ease-in-out;
 }
 
-.cardSignup button:hover {
-  background-color: #e64e7c; 
+.cardSignup button:hover,
+.cardLogin button:hover {
+  background-color: #e64e7c; /* Use the same hover color for both forms */
 }
+
+/* Styles specific to the login form (optional) */
+.cardLogin footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+.cardLogin footer a {
+  color: #f06c99;
+  text-decoration: none;
+}
+
+.cardLogin footer a:hover {
+  text-decoration: underline;
+}
+
 
                                                    /*-----Login------*/
 /* Styles for the body element */

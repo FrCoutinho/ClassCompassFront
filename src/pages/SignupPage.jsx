@@ -29,30 +29,39 @@ const SignupPage = () => {
             }
           }
 
-          return ( 
-            <body className= "bodySignup">
-            <div className="backgroundSignup"/>
-                <div className="cardSignup">
-                    <h2>Sign Up</h2>
-                    {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-                    <form className="formSignup" onSubmit={handleSubmit}>
-                        <input
-                            value={username}
-                            onChange={event => setUsername(event.target.value)}
-                            placeholder="Username"
-                        />
-                        <input
-                            value={password}
-                            onChange={event => setPassword(event.target.value)}
-                            type="password"
-                            placeholder="Password"
-                        />
-                        <button type="submit">Sign Up</button>
-                    </form>
-                </div>
-            
+          return (
+            <body className="bodySignup">
+              <div className="backgroundSignup" />
+              <div className="cardSignup">
+                <h2>Sign Up</h2>
+                {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+                <form className="formSignup" onSubmit={handleSubmit}>
+                  <input
+                    value={username}
+                    onChange={event => setUsername(event.target.value)}
+                    placeholder="Username"
+                  />
+                  <input
+                    value={password}
+                    onChange={event => setPassword(event.target.value)}
+                    type="password"
+                    placeholder="Password"
+                  />
+          
+                  {/* Sign Up button (remains for form submission) */}
+                  <button type="submit">Sign Up</button>
+          
+                  {/* Added buttons for Forgot Password and Login */}
+                  <div className="additional-actions">
+                    <button onClick={() => handleForgotPassword()}>
+                      <i className="fas fa-question-circle"></i> Forgot Password?
+                    </button>
+                    <button onClick={() => handleLogin()}>Login</button>
+                  </div>
+                </form>
+              </div>
             </body>
-        );
+          );
     };
      
     export default SignupPage;
