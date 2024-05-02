@@ -38,7 +38,7 @@ const LoginPage = () => {
     };
 
     return ( 
-        <body>
+        <body className= "bodyLogin">
         <div className="backgroundLogin"/>
             <div className="cardLogin">
                 <h2>Welcome</h2>

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Signup from "./pages/SignupPage";
 import Login from "./pages/LoginPage";
+import Navbar from './components/Navbar';
 import './App.css';
 
 
@@ -9,6 +10,8 @@ function App() {
 
   return (
     <>
+    <div className="App">
+      <Navbar/>
     <Routes>
       <Route path="/" element={<h1> Home page</h1>}/>
       {/* auth:
@@ -26,6 +29,7 @@ function App() {
 
       <Route path="*" element={<h1> 404 page</h1>}/>
       </Routes>
+      </div>
       
     </>
   )

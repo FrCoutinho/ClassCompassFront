@@ -1,137 +1,316 @@
-#root {
 
-}
 /*------Login and Signup------*/
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  display: grid;
-  place-items: center;
-  gap: 50px;
+body.bodySignup {
   margin: 0;
-  height: 100vh;
-  padding: 0 32px;
-  background: #eff9ff;
-  font-family: "Euclid Circular A", "Poppins";
+  padding: 0;
+  font-family: sans-serif; 
+  background-color: #f8f9fa;
 }
 
-@media (width >= 500px) {
-  body {
-    padding: 0;
-  }
+/* Styles for the backgroundSignup element */
+.backgroundSignup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("path/to/your/image.jpg"); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; 
 }
 
+/* Styles for the cardSignup element */
+.cardSignup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px; /* Adjust width as needed */
+  padding: 30px;
+  background-color: #fff; /* Light background */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Styles for the h2 element */
+.cardSignup h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f06c99; 
+}
+
+/* Styles for the error message paragraph */
+.cardSignup p {
+  color: #ff4d69; 
+  margin-bottom: 10px;
+}
+
+/* Styles for the formSignup element */
+.cardSignup form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+/* Styles for the input elements */
+.cardSignup input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+/* Styles for the button element */
+.cardSignup button {
+  padding: 10px 20px;
+  background-color: #f06c99; 
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out; 
+}
+
+.cardSignup button:hover {
+  background-color: #e64e7c; 
+}
+
+                                                   /*-----Login------*/
+/* Styles for the body element */
+body.bodyLogin {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; 
+  background-color: #f8f9fa; 
+}
+/* Styles for the backgroundLogin element */
 .backgroundLogin {
   position: fixed;
-  top: -50vmin;
-  left: -50vmin;
-  width: 100vmin;
-  height: 100vmin;
-  border-radius: 47% 53% 61% 39% / 45% 51% 49% 55%;
-  background: #65c8ff;
-}
-
-.backgroundLogin::after {
-  content: "";
-  position: inherit;
-  right: -50vmin;
-  bottom: -55vmin;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  background: #143d81;
-}
-
-.cardLogin {
-  overflow: hidden;
-  position: relative;
-  z-index: 3;
-  width: 94%;
-  margin: 0 20px;
-  padding: 170px 30px 54px;
-  border-radius: 24px;
-  background: #ffffff;
-  text-align: center;
-  box-shadow: 0 100px 100px rgb(0 0 0 / 10%);
-}
-
-.cardLogin::before {
-  content: "";
-  position: absolute;
-  top: -880px;
-  left: 50%;
-  translate: -50% 0;
-  width: 1000px;
-  height: 1000px;
-  border-radius: 50%;
-  background: #216ce7;
-}
-
-@media (width >= 500px) {
-  .card {
-    margin: 0;
-    width: 360px;
-  }
-}
-
-.cardLogin .logo {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  translate: -50% 0;
-  width: 64px;
-  height: 64px;
-}
-
-.cardLogin > h2 {
-  font-size: 22px;
-  font-weight: 400;
-  margin: 0 0 38px;
-  color: rgb(0 0 0 / 38%);
-}
-
-.formLogin {
-  margin: 0 0 44px;
-  display: grid;
-  gap: 12px;
-}
-
-.formLogin :is(input, button) {
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 56px;
-  border-radius: 28px;
+  height: 100%;
+  background-image: url("path/to/your/image.jpg"); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; 
+}
+
+/* Styles for the cardLogin element */
+.cardLogin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px; 
+  padding: 30px;
+  background-color: #fff; 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* Styles for the h2 element */
+.cardLogin h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f06c99; 
+}
+
+/* Styles for the error message paragraph */
+.cardLogin p {
+  color: #ff4d69; 
+  margin-bottom: 10px;
+}
+
+/* Styles for the formLogin element */
+.cardLogin form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+/* Styles for the input elements */
+.cardLogin input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
   font-size: 16px;
-  font-family: inherit;
 }
 
-.formLogin > input {
-  border: 0;
-  padding: 0 24px;
-  color: #222222;
-  background: #ededed;
+/* Styles for the button element */
+.cardLogin button {
+  padding: 10px 20px;
+  background-color: #f06c99;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease-in-out; 
 }
 
-.formLogin > input::placeholder {
-  color: rgb(0 0 0 / 28%);
+.cardLogin button:hover {
+  background-color: #e64e7c; 
 }
 
-.formLogin > button {
-  border: 0;
-  color: #f9f9f9;
-  background: #226ce7;
+/* Styles for the footer element */
+.cardLogin footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+.cardLogin footer a {
+  color: #f06c99;
+  text-decoration: none; 
+}
+
+.cardLogin footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+                                                    /*------Navbar------*/
+.bodyNav {
+  font-family: "Poppins";
+  font-size: 18px;
+  margin: 0;
+  height: 100vh;
+  background:white;
+  color: #fff;
+}
+
+:root {
+  --color-primary: #cf84d0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px 0;
+}
+
+nav > :is(h1, span.material-symbols-outlined) {
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  font-weight: 500;
+}
+
+nav h1 {
+  background: #e5bee1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+nav span {
+  color: #fff;
+  font-size: 20px;
+}
+
+a {
   cursor: pointer;
 }
 
-.cardLogin > footer {
-  color: #a1a1a1;
+.menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 70px;
 }
 
-.cardLogin > footer > a {
-  color: #216ce7;
+.menu li {
+  display: inline-block;
+  width: 80px;
+  color: #0b0a0a;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu li:hover .submenu {
+  height: 85px;
+}
+
+.menu > li:hover > a {
+  color: #fff;
+}
+
+.menu > li:hover > a::before {
+  visibility: visible;
+  scale: 1 1;
+}
+
+.submenu {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  background-color: var(--color-primary);
+  height: 0;
+  line-height: 40px;
+  box-sizing: border-box;
+  transition: height 0.3s ease-in-out;
+}
+.submenu li {
+  margin-bottom: 10px; 
+}
+.menu li .submenu a {
+  color: #fff;
+  opacity: 0;
+  font-size: 16px;
+  transition: opacity 0.25s;
+}
+
+.menu > li:hover .submenu a {
+  opacity: 1;
+}
+
+.menu > li .submenu a:hover {
+  background: rgb(0 0 0 / 20%);
+}
+
+.menu > li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.menu > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 3px;
+  left: 0px;
+  background-color: var(--color-primary);
+  transition: all 0.2s ease-in-out;
+  scale: 0 0;
+  visibility: hidden;
 }

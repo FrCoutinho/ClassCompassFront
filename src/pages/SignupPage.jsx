@@ -30,12 +30,12 @@ const SignupPage = () => {
           }
 
           return ( 
-            <body>
-            <div className="backgroundLogin"/>
-                <div className="cardLogin">
+            <body className= "bodySignup">
+            <div className="backgroundSignup"/>
+                <div className="cardSignup">
                     <h2>Sign Up</h2>
                     {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-                    <form className="formLogin" onSubmit={handleSubmit}>
+                    <form className="formSignup" onSubmit={handleSubmit}>
                         <input
                             value={username}
                             onChange={event => setUsername(event.target.value)}
