@@ -26,12 +26,12 @@ const AddTeacher = () => {
       subject: subject,
       experience_years: experienceYears,
       email: email,
-      hashedPassword: password,
+      password: password,
     };
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/allteachers`,
+        `${import.meta.env.VITE_API_URL}/authprof/signup`,
         {
           method: "POST",
           body: JSON.stringify(newTeacher),
@@ -59,7 +59,7 @@ const AddTeacher = () => {
         <img src={TeacherImg} alt="teacherImg" className="teacher-image" />
         <h2 style={{ fontFamily: "Learning Curve" }}>Create new:</h2>
         <input
-          type="text"
+          type="String"
           value={name}
           onChange={handleNameChange}
           placeholder="Name"
@@ -67,7 +67,7 @@ const AddTeacher = () => {
         />
         <h2 style={{ fontFamily: "Learning Curve" }}>Disciplines:</h2>
         <input
-          type="text"
+          type="String"
           value={subject}
           onChange={handleSubjectChange}
           placeholder="Subject"
