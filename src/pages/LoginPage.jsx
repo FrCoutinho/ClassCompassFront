@@ -3,7 +3,7 @@ import { SessionContext } from "../contexts/SessionContext";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
-  const { setToken } = useContext(SessionContext) ?? "foobar";
+  const { setToken } = useContext(SessionContext);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
