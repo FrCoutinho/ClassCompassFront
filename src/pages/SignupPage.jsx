@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignupPage = () => {
   const [username, setUsername] = useState("");
@@ -32,10 +33,13 @@ const SignupPage = () => {
   };
 
   return (
-    <body className="bodySignup">
+    <div className="divSignup">
       <div className="backgroundSignup" />
       <div className="cardSignup">
         <h2>Sign Up</h2>
+        <Link to="/" className="nav-links">
+          X
+        </Link>
         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         <form className="formSignup" onSubmit={handleSubmit}>
           <input
@@ -55,14 +59,13 @@ const SignupPage = () => {
 
           {/* Added buttons for Forgot Password and Login */}
           <div className="additional-actions">
-            <button onClick={() => handleForgotPassword()}>
-              <i className="fas fa-question-circle"></i> Forgot Password?
-            </button>
-            <button onClick={() => handleLogin()}>Login</button>
+            <Link to="/login" className="nav-links">
+              Login
+            </Link>
           </div>
         </form>
       </div>
-    </body>
+    </div>
   );
 };
 

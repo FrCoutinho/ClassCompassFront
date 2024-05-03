@@ -1,9 +1,10 @@
 import { createContext, useEffect, useState } from "react";
+import React from "react";
 
 export const SessionContext = createContext();
 
 const SessionContextProvider = ({ children }) => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState();
 
   useEffect(() => {
     if (token) {

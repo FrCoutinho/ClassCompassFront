@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { SessionContext } from "../contexts/SessionContext";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
-  const { setToken } = useContext(SessionContext);
+  const { setToken } = useContext(SessionContext) ?? "foobar";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +24,6 @@ const LoginPage = () => {
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData.token);
-        setToken(responseData.token);
       }
     } catch (error) {
       console.log(error);
@@ -31,26 +31,42 @@ const LoginPage = () => {
   };
 
   return (
-    <>
-      <h1>Login Page</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username
-          <input
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </label>
-        <label>
-          password
-          <input
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-        <button type="submit">log in</button>
-      </form>
-    </>
+    <div className="divLogin">
+      <div className="backgroundLogin"></div>
+      <div className="cardLogin">
+        <Link to="/" className="nav-links">
+          X
+        </Link>
+        <h2>Login Page</h2>
+        <form onSubmit={handleSubmit} className="formLogin">
+          <label>
+            Username
+            <input
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </label>
+
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </label>
+          <button type="submit">Log in</button>
+        </form>
+        <footer>
+          <p>
+            Don't have an account?{" "}
+            <Link to="/signup" className="nav-links">
+              Sign up
+            </Link>
+          </p>
+        </footer>
+      </div>
+    </div>
   );
 };
 

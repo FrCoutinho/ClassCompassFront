@@ -1,6 +1,6 @@
 /* Styles for both signup and login forms */
-body.bodySignup,
-body.bodyLogin {
+div.divSignup,
+div.divLogin {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
