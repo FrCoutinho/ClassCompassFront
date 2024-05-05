@@ -33,8 +33,9 @@ function Content() {
               Empower your learning journey with engaging resources.
             </p>
           </Link>
-
+          /*
           <img src={classImage} alt="class" height={260} />
+          */
           <Link to="/class" className="nav-links">
             <h2 className="Maintitle2">Classes</h2>
             <p className="Maintitle3">
