@@ -1,11 +1,9 @@
-// ProtectedContent.jsx
-
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const ProtectedContent = ({ isLoggedIn }) => {
   if (!isLoggedIn) {
-    return <Redirect to="/" />;
+    return <Navigate to="/" />;
   }
 
   return (

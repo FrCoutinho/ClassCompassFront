@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"; // Import Link component for routing
 import student from "../imagens/student.png";
 import teacher from "../imagens/teacher.png";
-import about from "../imagens/about.png";
+import classImage from "../imagens/classImage.png";
 
 function Content() {
   return (
@@ -20,7 +20,7 @@ function Content() {
             </p>
           </Link>
           <img src={student} alt="student" height={260} />
-          <Link to="/allteachers" className="nav-links">
+          <Link to="/addstudent" className="nav-links">
             <h2 className="Maintitle2">Students</h2>
             <p className="Maintitle3">
               Empower your learning journey with engaging resources.
@@ -28,14 +28,12 @@ function Content() {
           </Link>
           <img src={student} alt="student" height={260} />
           <Link to="/allteachers" className="nav-links">
-            <h2 className="Maintitle2">Students</h2>
+            <h2 className="Maintitle2">Class</h2>
             <p className="Maintitle3">
-              Empower your learning journey with engaging resources.
+              Unlock your creativity with expert guidance.
             </p>
           </Link>
-          /*
-          <img src={classImage} alt="class" height={260} />
-          */
+          <img src={classImage} alt="classImage" height={260} />
           <Link to="/class" className="nav-links">
             <h2 className="Maintitle2">Classes</h2>
             <p className="Maintitle3">

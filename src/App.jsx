@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import Signup from "./pages/SignupPage";
 import Login from "./pages/LoginPage";
 import Navbar from "./components/Navbar";
@@ -7,12 +8,22 @@ import Footer from "./components/Footer";
 import AboutPage from "./pages/AboutPage";
 import AllTeachers from "./pages/AllTeachers";
 import AddTeacher from "./pages/AddTeacher";
-import ProtectedContent from "./pages/ProtectedContent";
+import AddClass from "./pages/addClass";
+import AddStudent from "./pages/AddStudent";
+import { Navigate } from "react-router-dom";
 
 import "./App.css";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  // Function to check authentication status
+  const checkAuth = () => {
+    // Your authentication logic here
+
+    return isLoggedIn;
+  };
 
   return (
     <>
@@ -21,21 +32,39 @@ function App() {
         <Routes>
           <Route path="/" element={<Content />} />
           {/* auth:
-       - Signup
-       - Login
-        */}
+           - Signup
+           - Login
+          */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/allteachers" element={<AllTeachers />} />
-          <Route path="/allstudents" element={<AllStudents />} />
-          <Route path="/protected">
-            <Route path="/addteachers" element={<AddTeacher />} />
-            <Route path="/addclass" element={<AddClass />} />
-            <Route path="/addstudent" element={<AddStudent />} />
-            {checkAuth() ? <ProtectedContent /> : <Redirect to="/login" />}
-          </Route>
+          <Route
+            path="/addteachers"
+            element={
+              <PrivateRoute>
+                {" "}
+                <AddTeacher />{" "}
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/addclass"
+            element={
+              <PrivateRoute>
+                <AddClass />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/addstudent"
+            element={
+              <PrivateRoute>
+                <AddStudent />
+              </PrivateRoute>
+            }
+          />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={<h1> 404 page</h1>} />
+          <Route path="*" element={<h1>404 page</h1>} />
         </Routes>
         <Footer />
       </div>

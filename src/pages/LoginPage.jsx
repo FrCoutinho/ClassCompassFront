@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { SessionContext } from "../contexts/SessionContext";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const LoginPage = () => {
   const { setToken } = useContext(SessionContext);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,12 +24,17 @@ const LoginPage = () => {
       );
       if (response.ok) {
         const responseData = await response.json();
+        setToken(responseData.token);
+        setLoggedIn(true);
         console.log(responseData.token);
       }
     } catch (error) {
       console.log(error);
     }
   };
+  if (loggedIn) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <div className="divLogin">
@@ -66,6 +72,7 @@ const LoginPage = () => {
           </p>
         </footer>
       </div>
+      {loggedIn && <button onClick={handleLogout}>Logout</button>}
     </div>
   );
 };
