@@ -5,7 +5,6 @@ import Login from "./pages/LoginPage";
 import Navbar from "./components/Navbar";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
-import AboutPage from "./pages/AboutPage";
 import AllTeachers from "./pages/AllTeachers";
 import AddTeacher from "./pages/AddTeacher";
 import AddClass from "./pages/addClass";
@@ -63,7 +62,6 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<h1>404 page</h1>} />
         </Routes>
         <Footer />

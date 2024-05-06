@@ -6,8 +6,9 @@ const AddStudent = () => {
   const [grade, setGrade] = useState("");
   const [age, setAge] = useState(0);
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
   const [submitted, setSubmitted] = useState(false);
+  const [photo, setPhoto] = useState(null);
 
   const navigate = useNavigate();
 
@@ -15,7 +16,11 @@ const AddStudent = () => {
   const handleGradeChange = (e) => setGrade(e.target.value);
   const handleAgeChange = (e) => setAge(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
+
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    setPhoto(file);
+  };
 
   async function handleFormSubmit(e) {
     e.preventDefault();
@@ -24,7 +29,8 @@ const AddStudent = () => {
       name: name,
       age: age,
       email: email,
-      password: password,
+
+      photo: photo,
     };
 
     try {
@@ -86,14 +92,14 @@ const AddStudent = () => {
           placeholder="Email"
           className="student-input"
         />
-        <h2 style={{ fontFamily: "Learning Curve" }}>Password:</h2>
+
+        <h2 style={{ fontFamily: "Learning Curve" }}>Photo:</h2>
         <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="Password"
+          type="file"
+          onChange={handlePhotoChange}
           className="student-input"
         />
+
         <button type="submit" className="student-submit">
           Submit
         </button>

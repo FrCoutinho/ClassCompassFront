@@ -369,6 +369,43 @@ a {
   font-family: 'KG Primary Penmanship';
   font-size: 20px;
 }
+
+.feedback-container {
+  margin-top: 20px;
+}
+
+.feedback-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feedback-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-container textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+.feedback-container button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Use your preferred color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-container button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
 /*------------------------------- AddTeacher--------- */
 
 /* styles.css */

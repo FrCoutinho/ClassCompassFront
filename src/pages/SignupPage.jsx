@@ -21,6 +21,7 @@ const SignupPage = () => {
       if (response.status === 201) {
         const newUser = await response.json();
         console.log(newUser);
+        history.push("/login");
       } else if (response.status === 400) {
         const error = await response.json();
         console.log(error);

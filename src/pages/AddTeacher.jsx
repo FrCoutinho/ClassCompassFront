@@ -8,6 +8,7 @@ const AddTeacher = () => {
   const [experienceYears, setExperienceYears] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [photo, setPhoto] = useState(null); // Novo estado para a foto
   const [submitted, setSubmitted] = useState(false);
 
   const navigate = useNavigate();
@@ -17,9 +18,13 @@ const AddTeacher = () => {
   const handleExperienceYearsChange = (e) => setExperienceYears(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handlePhotoChange = (e) => setPhoto(e.target.files[0]); // Função para lidar com a mudança de arquivo
 
   async function handleFormSubmit(e) {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("photo", photo); // Adiciona a foto ao FormData
 
     const newTeacher = {
       name: name,
@@ -29,15 +34,14 @@ const AddTeacher = () => {
       password: password,
     };
 
+    formData.append("teacherData", JSON.stringify(newTeacher)); // Adiciona os dados do professor ao FormData
+
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/authprof/signup`,
         {
           method: "POST",
-          body: JSON.stringify(newTeacher),
-          headers: {
-            "Content-Type": "application/json",
-          },
+          body: formData, // Envia o FormData contendo a foto e os dados do professor
         }
       );
 
@@ -101,6 +105,14 @@ const AddTeacher = () => {
           value={password}
           onChange={handlePasswordChange}
           placeholder="Password"
+          className="teacher-input"
+        />
+        {/* Campo de upload de foto */}
+        <h2 style={{ fontFamily: "Learning Curve" }}>Add Photo:</h2>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handlePhotoChange}
           className="teacher-input"
         />
         <button type="submit" className="teacher-submit">
