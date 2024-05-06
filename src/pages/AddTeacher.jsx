@@ -66,13 +66,19 @@ const AddTeacher = () => {
           className="teacher-input"
         />
         <h2 style={{ fontFamily: "Learning Curve" }}>Disciplines:</h2>
-        <input
-          type="String"
+        <select
           value={subject}
           onChange={handleSubjectChange}
-          placeholder="Subject"
           className="teacher-input"
-        />
+        >
+          <option value="">Select </option>
+          <option value="Math">Math</option>
+          <option value="Science">French</option>
+          <option value="History">Programing</option>
+          <option value="Science">Science</option>
+          <option value="History">History</option>
+          <option value="Others">Others</option>
+        </select>
         <h2 style={{ fontFamily: "Learning Curve" }}>Experience Years:</h2>
         <input
           type="number"

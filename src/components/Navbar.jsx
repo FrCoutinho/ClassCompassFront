@@ -28,6 +28,9 @@ const Navbar = () => {
               <li className="dropdown-item">
                 <Link to="/classes/programming">Programming</Link>
               </li>
+              <li className="dropdown-item">
+                <Link to="/classes/programming">Others...</Link>
+              </li>
             </ul>
           </li>
 

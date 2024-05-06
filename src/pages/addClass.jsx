@@ -43,14 +43,21 @@ const AddClass = () => {
   return (
     <div className="class-container">
       <form onSubmit={handleFormSubmit} className="class-form">
-        <h2 style={{ fontFamily: "Learning Curve" }}>Create new class:</h2>
-        <input
-          type="text"
+        <h2 style={{ fontFamily: "Learning Curve" }}>Disciplines:</h2>
+        <select
           value={subject}
           onChange={handleSubjectChange}
-          placeholder="Subject"
-          className="class-input"
-        />
+          className="teacher-input"
+        >
+          <option value="">Select </option>
+          <option value="Math">Math</option>
+          <option value="Science">French</option>
+          <option value="History">Programing</option>
+          <option value="English"></option>
+          <option value="Science">Science</option>
+          <option value="History">History</option>
+          <option value="Others">Others</option>
+        </select>
         <input
           type="text"
           value={professor}

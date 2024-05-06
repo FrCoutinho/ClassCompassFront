@@ -10,7 +10,7 @@ const AllStudents = () => {
     async function fetchStudents() {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/professor/professors`
+          `${import.meta.env.VITE_API_URL}/student/students`
         );
         if (response.ok) {
           const data = await response.json();

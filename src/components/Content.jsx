@@ -26,7 +26,7 @@ function Content() {
               Empower your learning journey with engaging resources.
             </p>
           </Link>
-          <img src={student} alt="student" height={260} />
+          <img src={classImage} alt="student" height={260} />
           <Link to="/allteachers" className="nav-links">
             <h2 className="Maintitle2">Class</h2>
             <p className="Maintitle3">
