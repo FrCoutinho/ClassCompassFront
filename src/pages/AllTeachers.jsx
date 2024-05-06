@@ -33,18 +33,23 @@ const AllTeachers = () => {
   }
 
   return (
-    <div className="teacher-container">
-      {teachers.map((teacher) => (
-        <div key={teacher._id} className="teacher-card">
-          <img src={TeacherImg} alt="teacherImg" className="teacher-image" />
-          <div className="teacher-details">
-            <h2>{teacher.name}</h2>
-            <p>Subject: {teacher.subject}</p>
-            <p>Experience Years: {teacher.experience_years}</p>
-            <p>Email: {teacher.email}</p>
+    <div className="hero-section">
+      <div className="card-grid">
+        {teachers.map((teacher) => (
+          <div key={teacher._id} className="card">
+            <div
+              className="card__background"
+              style={{ backgroundImage: `url(${TeacherImg})` }}
+            ></div>
+            <div className="card__content">
+              <h2 className="card__heading">{teacher.name}</h2>
+              <p className="card__category">Subject: {teacher.subject}</p>
+              <p>Experience Years: {teacher.experience_years}</p>
+              <p>Email: {teacher.email}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
