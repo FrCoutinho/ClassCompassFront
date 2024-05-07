@@ -4,56 +4,47 @@ import { useNavigate } from "react-router-dom";
 const AddStudent = () => {
   const [name, setName] = useState("");
   const [grade, setGrade] = useState("");
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
-
-  const [submitted, setSubmitted] = useState(false);
   const [photo, setPhoto] = useState(null);
-
+  const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
 
   const handleNameChange = (e) => setName(e.target.value);
   const handleGradeChange = (e) => setGrade(e.target.value);
   const handleAgeChange = (e) => setAge(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
-
-  const handlePhotoChange = (e) => {
-    const file = e.target.files[0];
-    setPhoto(file);
-  };
+  const handlePhotoChange = (e) => setPhoto(e.target.files[0]);
 
   async function handleFormSubmit(e) {
     e.preventDefault();
 
-    const newStudent = {
-      name: name,
-      age: age,
-      email: email,
-
-      photo: photo,
-    };
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("grade", grade);
+    formData.append("age", age);
+    formData.append("email", email);
+    formData.append("photo", photo);
 
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/authstudent/signup`,
         {
           method: "POST",
-          body: JSON.stringify(newStudent),
-          headers: {
-            "Content-Type": "application/json",
-          },
+          body: formData,
         }
       );
 
       if (response.ok) {
         const data = await response.json();
-        setTimeout(() => {
-          navigate("/allstudents");
-        }, 250);
         setSubmitted(true);
+        setTimeout(() => navigate("/allstudents"), 250);
+      } else {
+        // Handle error response
       }
     } catch (error) {
       console.log("Error adding Student:", error);
+      // Handle error
     }
   }
 
@@ -70,7 +61,7 @@ const AddStudent = () => {
         />
         <h2 style={{ fontFamily: "Learning Curve" }}>Grade:</h2>
         <input
-          type="text"
+          type="number"
           value={grade}
           onChange={handleGradeChange}
           placeholder="Grade"
@@ -92,14 +83,13 @@ const AddStudent = () => {
           placeholder="Email"
           className="student-input"
         />
-
         <h2 style={{ fontFamily: "Learning Curve" }}>Photo:</h2>
         <input
           type="file"
+          name="photo"
+          accept="image/png, image/jpg"
           onChange={handlePhotoChange}
-          className="student-input"
         />
-
         <button type="submit" className="student-submit">
           Submit
         </button>

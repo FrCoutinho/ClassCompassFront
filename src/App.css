@@ -360,6 +360,8 @@ a {
 }
 .Content2{
   padding: 50px;
+  display: flex;
+  justify-content: center;
   
 }
 .Maintitle2{
@@ -410,9 +412,14 @@ a {
 }
 
 .Content3{
+  padding-top: 500px;
   text-align: center;
   border: #0b0a0a 2px ;
+
 }
+
+
+
 
 /*------------------------------- AddTeacher--------- */
 

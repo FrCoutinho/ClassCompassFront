@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TeacherImg from "../imagens/Content.jpg";
+import { AdvancedImage } from "@cloudinary/react";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 
 const AddTeacher = () => {
   const [name, setName] = useState("");
