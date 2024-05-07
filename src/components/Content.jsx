@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import student from "../imagens/student.png";
 import teacher from "../imagens/teacher.png";
 import classImage from "../imagens/classImage.png";
+import raiting from "../imagens/raiting.jpg";
 
 function Content() {
   const [feedback, setFeedback] = useState("");
@@ -22,7 +23,11 @@ function Content() {
       <div className="Content">
         <h1 className="Maintitle">Class Compass</h1>
       </div>
-      <div className="Content3"></div>
+      <div className="Content3">
+        <h2>Raiting</h2>
+        <h3>4,8 / 5 -- by professors in the World</h3>
+        <img src={raiting} alt="raiting" height={150} />
+      </div>
       <div className="Content2">
         <h2>Be one off us:</h2>
         <nav>

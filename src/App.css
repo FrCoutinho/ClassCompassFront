@@ -42,13 +42,13 @@ div.divLogin {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: #f06c99; /* Use the same color for both forms */
+  color: #1c3720 /* Use the same color for both forms */
 }
 
 /* Styles for the error message paragraph */
 .cardSignup p,
 .cardLogin p {
-  color: #ff4d69; /* Use the same color for both forms */
+  color: #1c3720; /* Use the same color for both forms */
   margin-bottom: 10px;
 }
 
@@ -73,7 +73,7 @@ div.divLogin {
 .cardSignup button,
 .cardLogin button {
   padding: 10px 20px;
-  background-color: #f06c99; /* Use the same color for both forms */
+  background-color: #1c3720; /* Use the same color for both forms */
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -84,7 +84,7 @@ div.divLogin {
 
 .cardSignup button:hover,
 .cardLogin button:hover {
-  background-color: #e64e7c; /* Use the same hover color for both forms */
+  background-color: #1c3720; /* Use the same hover color for both forms */
 }
 
 /* Styles specific to the login form (optional) */
@@ -96,7 +96,7 @@ div.divLogin {
 }
 
 .cardLogin footer a {
-  color: #f06c99;
+  color: #1c3720;
   text-decoration: none;
 }
 
@@ -145,12 +145,12 @@ body.bodyLogin {
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: #f06c99; 
+  color: #1c3720; 
 }
 
 /* Styles for the error message paragraph */
 .cardLogin p {
-  color: #ff4d69; 
+  color: #1c3720; 
   margin-bottom: 10px;
 }
 
@@ -172,7 +172,7 @@ body.bodyLogin {
 /* Styles for the button element */
 .cardLogin button {
   padding: 10px 20px;
-  background-color: #f06c99;
+  background-color: #1c3720;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -182,7 +182,7 @@ body.bodyLogin {
 }
 
 .cardLogin button:hover {
-  background-color: #e64e7c; 
+  background-color: #1c3720; 
 }
 
 /* Styles for the footer element */
@@ -194,7 +194,7 @@ body.bodyLogin {
 }
 
 .cardLogin footer a {
-  color: #f06c99;
+  color: #1c3720;
   text-decoration: none; 
 }
 
@@ -216,7 +216,7 @@ body.bodyLogin {
 }
 
 :root {
-  --color-primary: #cf84d0;
+  --color-primary: #1c3720;
 }
 
 ul {
@@ -240,7 +240,7 @@ nav > :is(h1, span.material-symbols-outlined) {
 }
 
 nav h1 {
-  background: #e5bee1;
+  background: #345639;
   border-radius: 8px;
   font-size: 16px;
 }
@@ -346,6 +346,7 @@ a {
  
   height: 400px;
   background-image: url(imagens/Content2.jpg);
+  background-size:  800px 300px ;
   background-position: center;
   background-repeat: no-repeat;
   
@@ -389,12 +390,12 @@ a {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  resize: vertical; /* Allow vertical resizing of textarea */
+  resize: vertical; 
 }
 
 .feedback-container button {
   padding: 10px 20px;
-  background-color: #007bff; /* Use your preferred color */
+  background-color: #007bff; 
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -403,7 +404,14 @@ a {
 }
 
 .feedback-container button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3; 
+
+
+}
+
+.Content3{
+  text-align: center;
+  border: #0b0a0a 2px ;
 }
 
 /*------------------------------- AddTeacher--------- */

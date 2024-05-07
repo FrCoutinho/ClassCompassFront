@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,7 +22,7 @@ const SignupPage = () => {
       if (response.status === 201) {
         const newUser = await response.json();
         console.log(newUser);
-        history.push("/login");
+        navigate("/login");
       } else if (response.status === 400) {
         const error = await response.json();
         console.log(error);

@@ -34,7 +34,7 @@ const AddTeacher = () => {
       password: password,
     };
 
-    formData.append("teacherData", JSON.stringify(newTeacher)); // Adiciona os dados do professor ao FormData
+    formData.append("teacherData", newTeacher); // Adiciona os dados do professor ao FormData
 
     try {
       const response = await fetch(
