@@ -17,6 +17,7 @@ const AddClass = () => {
     const newClass = {
       subject: subject,
       professor: professor,
+      student: { name: "Student Name" },
     };
 
     try {
@@ -53,7 +54,6 @@ const AddClass = () => {
           <option value="Math">Math</option>
           <option value="Science">French</option>
           <option value="History">Programing</option>
-          <option value="English"></option>
           <option value="Science">Science</option>
           <option value="History">History</option>
           <option value="Others">Others</option>

@@ -9,6 +9,7 @@ import AllTeachers from "./pages/AllTeachers";
 import AddTeacher from "./pages/AddTeacher";
 import AddClass from "./pages/addClass";
 import AddStudent from "./pages/AddStudent";
+import AllStudents from "./pages/AllStudents";
 import { Navigate } from "react-router-dom";
 
 import "./App.css";
@@ -62,6 +63,8 @@ function App() {
               </PrivateRoute>
             }
           />
+          <Route path="/class" element={<AllStudents />} />
+          <Route path="/classes/:id" element={<AddClass />} />
           <Route path="*" element={<h1>404 page</h1>} />
         </Routes>
         <Footer />

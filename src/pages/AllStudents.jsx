@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AllStudents = () => {
-  const [students, setstudents] = useState([]);
+  const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -34,11 +34,12 @@ const AllStudents = () => {
   return (
     <div className="hero-section">
       <div className="card-grid">
-        {student.map((student) => (
+        {students.map((student) => (
           <div key={student._id} className="card">
             <img
               className="card__background"
               src={student.photo}
+              alt={student.name} // Adicionado para acessibilidade
               style={{ width: "300px", height: "400px" }}
             />
 
