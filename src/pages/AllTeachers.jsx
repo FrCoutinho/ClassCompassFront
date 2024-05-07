@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import TeacherImg from "../imagens/Content.jpg";
+import { Link } from "react-router-dom";
 
 const AllTeachers = () => {
   const [teachers, setTeachers] = useState([]);
@@ -37,15 +37,20 @@ const AllTeachers = () => {
       <div className="card-grid">
         {teachers.map((teacher) => (
           <div key={teacher._id} className="card">
-            <div
+            <img
               className="card__background"
-              style={{ backgroundImage: `url(${TeacherImg})` }}
-            ></div>
+              src={teacher.photo}
+              style={{ width: "300px", height: "400px" }}
+            />
+
             <div className="card__content">
               <h2 className="card__heading">{teacher.name}</h2>
               <p className="card__category">Subject: {teacher.subject}</p>
               <p>Experience Years: {teacher.experience_years}</p>
               <p>Email: {teacher.email}</p>
+              <Link to={`/classes/${teacher._id}`} className="btn">
+                Add Class
+              </Link>
             </div>
           </div>
         ))}

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TeacherImg from "../imagens/Content.jpg";
-import { AdvancedImage } from "@cloudinary/react";
-import { fill } from "@cloudinary/url-gen/actions/resize";
 
 const AddTeacher = () => {
   const [name, setName] = useState("");
@@ -25,25 +23,39 @@ const AddTeacher = () => {
   async function handleFormSubmit(e) {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("photo", photo); // Adiciona a foto ao FormData
+    if (!name) {
+      console.log("Name is required");
+      return;
+    }
 
     const newTeacher = {
       name: name,
       subject: subject,
       experience_years: experienceYears,
       email: email,
-      password: password,
+      password: password, // corrected variable name
     };
+    console.log(newTeacher);
+    const formData = new FormData();
+    for (const key in newTeacher) {
+      if (Object.hasOwnProperty.call(newTeacher, key)) {
+        formData.append(key, newTeacher[key]);
+      }
+    }
 
-    formData.append("teacherData", newTeacher); // Adiciona os dados do professor ao FormData
+    // Append photo separately if it exists
+    if (photo) {
+      formData.append("photo", photo);
+    }
+
+    console.log(formData);
 
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/authprof/signup`,
         {
           method: "POST",
-          body: formData, // Envia o FormData contendo a foto e os dados do professor
+          body: formData,
         }
       );
 

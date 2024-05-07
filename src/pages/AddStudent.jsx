@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddStudent = () => {
   const [name, setName] = useState("");
-  const [grade, setGrade] = useState("");
+  const [classes, setClasses] = useState(""); // Changed the state variable name to avoid conflict
   const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [photo, setPhoto] = useState(null);
@@ -11,7 +11,7 @@ const AddStudent = () => {
   const navigate = useNavigate();
 
   const handleNameChange = (e) => setName(e.target.value);
-  const handleGradeChange = (e) => setGrade(e.target.value);
+  const handleClassesChange = (e) => setClasses(e.target.value);
   const handleAgeChange = (e) => setAge(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePhotoChange = (e) => setPhoto(e.target.files[0]);
@@ -21,14 +21,14 @@ const AddStudent = () => {
 
     const formData = new FormData();
     formData.append("name", name);
-    formData.append("grade", grade);
+    formData.append("classes", classes);
     formData.append("age", age);
     formData.append("email", email);
     formData.append("photo", photo);
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/authstudent/signup`,
+        `${import.meta.env.VITE_API_URL}/authstud/signup`,
         {
           method: "POST",
           body: formData,
@@ -59,14 +59,20 @@ const AddStudent = () => {
           placeholder="Name"
           className="student-input"
         />
-        <h2 style={{ fontFamily: "Learning Curve" }}>Grade:</h2>
-        <input
-          type="number"
-          value={grade}
-          onChange={handleGradeChange}
-          placeholder="Grade"
+        <h2 style={{ fontFamily: "Learning Curve" }}>Classes:</h2>
+        <select
+          value={classes}
+          onChange={handleClassesChange}
           className="student-input"
-        />
+        >
+          <option value="">Select </option>
+          <option value="Math">Math</option>
+          <option value="French">French</option>
+          <option value="Programming">Programming</option>
+          <option value="Science">Science</option>
+          <option value="History">History</option>
+          <option value="Others">Others</option>
+        </select>
         <h2 style={{ fontFamily: "Learning Curve" }}>Age:</h2>
         <input
           type="number"

@@ -8,6 +8,7 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+  const [error, setError] = useState(null); // New state for error handling
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,11 +28,21 @@ const LoginPage = () => {
         setToken(responseData.token);
         setLoggedIn(true);
         console.log(responseData.token);
+      } else {
+        // If response is not OK, handle error
+        const errorData = await response.json();
+        setError(errorData.message); // Assuming the API returns error message
       }
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    setToken(null);
+  };
+
   if (loggedIn) {
     return <Navigate to="/" />;
   }
@@ -44,6 +55,8 @@ const LoginPage = () => {
           X
         </Link>
         <h2>Login Page</h2>
+        {error && <p className="error-message">{error}</p>}{" "}
+        {/* Display error message if exists */}
         <form onSubmit={handleSubmit} className="formLogin">
           <label>
             Username
