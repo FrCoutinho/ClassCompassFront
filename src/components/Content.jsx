@@ -6,6 +6,8 @@ import classImage from "../imagens/classImage.png";
 import raiting from "../imagens/raiting.jpg";
 import creatClass from "../imagens/createClass.png";
 import allStudentsIMG from "../imagens/allStudentsIMG.jpg";
+import students from "../imagens/students.jpg";
+import steps from "../imagens/Steps.jpg";
 
 function Content() {
   const [feedback, setFeedback] = useState("");
@@ -68,7 +70,7 @@ function Content() {
         </div>
         {/* --------------------------------------------------*/}
         <div className="Aval">
-          <h3>5/5</h3>
+          <h3>5/5 ⭐️</h3>
           <p>Best Teachs with the best rating in the market</p>
         </div>
         <div className="Aval">
@@ -80,6 +82,7 @@ function Content() {
           <p>Have your reply in less then 4 days</p>
         </div>
         <div className="Steps">
+          <img src={steps} alt="steps" height={260} />
           <h2>3 steps to find what you need</h2>
           <div>
             <h3>1.Login</h3>
@@ -92,7 +95,7 @@ function Content() {
             </ul>
           </div>
           <div>
-            <h3>Find your Teacher</h3>
+            <h3>2.Find your Teacher</h3>
             <ul>
               <li>Look for an instructor by name, subject, or specialty.</li>
               <li>
@@ -105,7 +108,7 @@ function Content() {
               </li>
             </ul>
           </div>
-          <h3>Book your Lesson</h3>
+          <h3>3.Book your Lesson</h3>
           <ul>
             <li>
               Choose the specific lesson you want to book, considering date,
@@ -124,8 +127,7 @@ function Content() {
           </Link>
         </div>
         <div className="Content5">
-          <h2>All students</h2>
-          <img src={allStudentsIMG} alt="classImage2" height={260} />
+          <img src={students} alt="classImage2" height={260} />
           <Link to="/class" className="nav-links">
             <h2>All Students</h2>
             <p>
@@ -137,6 +139,8 @@ function Content() {
       </div>
       {/*---------------------------------------------------- Feedback Form */}
       <div className="feedback-container">
+        {" "}
+        <img src={allStudentsIMG} alt="classImage2" height={260} />
         <h2>Feedback</h2>
         <form onSubmit={handleSubmit}>
           <textarea

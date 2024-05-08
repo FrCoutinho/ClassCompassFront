@@ -200,7 +200,7 @@ body.bodyLogin {
  /*-------------------------------------------------Navbar------*/
 .bodyNav {
   font-family: 'Learning Curve';
-  font-size: 18px;
+  font-size: 30px;
   margin: 0;
   height: 80px;
   background:white;
@@ -861,6 +861,7 @@ body{
   border: 1px solid #c3e6cb;
   border-radius: 5px;
 }
+
 
 .teacher-input {
   -webkit-appearance: none;

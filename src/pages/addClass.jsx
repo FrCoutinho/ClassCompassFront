@@ -15,7 +15,7 @@ const AddClass = () => {
     const fetchProfessors = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/professors`
+          `${import.meta.env.VITE_API_URL}/allteachers`
         );
         if (response.ok) {
           const data = await response.json();
