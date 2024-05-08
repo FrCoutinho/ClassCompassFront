@@ -9,6 +9,7 @@ const AllClasses = () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/classes`);
         if (response.ok) {
           const allClasses = await response.json();
+          console.log(allClasses);
           setClasses(allClasses);
         } else {
           console.log("Failed to fetch classes:", response.status);
@@ -34,7 +35,8 @@ const AllClasses = () => {
               <strong>Professor:</strong> {classItem.professor.name}
             </p>
             <p>
-              <strong>Student:</strong> {classItem.student.name}
+              <strong>Student:</strong>{" "}
+              {classItem.student.map((student) => student.name)}
             </p>
           </li>
         ))}

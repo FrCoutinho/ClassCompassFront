@@ -15,7 +15,7 @@ const AddClass = () => {
     const fetchProfessors = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/allteachers`
+          `${import.meta.env.VITE_API_URL}/professor/professors`
         );
         if (response.ok) {
           const data = await response.json();
@@ -29,9 +29,12 @@ const AddClass = () => {
     };
     const fetchStudents = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/class`);
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/student/students`
+        );
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           setStudents(data);
         } else {
           console.error("Failed to fetch students");
@@ -50,7 +53,7 @@ const AddClass = () => {
       if (studentId) {
         try {
           const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/class/${studentId}`
+            `${import.meta.env.VITE_API_URL}/student/${studentId}`
           );
           if (response.ok) {
             const data = await response.json();
@@ -73,13 +76,17 @@ const AddClass = () => {
 
   //  const professors = [{ id: "663b502b4e3c93b683cb44b8", name: "Professor 1" }];
 
+  useEffect(() => {
+    console.log(professor);
+  }, [professor]);
+
   async function handleFormSubmit(e) {
     e.preventDefault();
 
     const newClass = {
       subject: subject,
       professor: professor,
-      student: { name: student.name },
+      student: student._id,
     };
 
     try {
@@ -128,7 +135,7 @@ const AddClass = () => {
         >
           <option value="">Select</option>
           {professors.map((prof) => (
-            <option key={prof.id} value={prof.id}>
+            <option key={prof._id} value={prof._id}>
               {prof.name}
             </option>
           ))}
@@ -141,7 +148,7 @@ const AddClass = () => {
         >
           <option value="">Select</option>
           {students.map((stu) => (
-            <option key={stu.id} value={stu.id}>
+            <option key={stu._id} value={stu._id}>
               {stu.name}
             </option>
           ))}

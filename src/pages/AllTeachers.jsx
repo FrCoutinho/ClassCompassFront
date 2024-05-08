@@ -51,6 +51,9 @@ const AllTeachers = () => {
               <Link to={`/addclass`} className="btn">
                 Add Class
               </Link>
+              <button type="deleteButton" className="student-delete">
+                Delete
+              </button>
             </div>
           </div>
         ))}

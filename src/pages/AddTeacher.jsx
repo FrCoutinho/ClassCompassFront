@@ -90,7 +90,7 @@ const AddTeacher = () => {
         >
           <option value="">Select </option>
           <option value="Math">Math</option>
-          <option value="Science">French</option>
+          <option value="French">French</option>
           <option value="History">Programing</option>
           <option value="Science">Science</option>
           <option value="History">History</option>
