@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { SessionContext } from "../contexts/SessionContext";
 import { Link, Navigate } from "react-router-dom";
 
@@ -7,8 +7,9 @@ const LoginPage = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [mode, setMode] = useState("student"); // Default mode is student
   const [loggedIn, setLoggedIn] = useState(false);
-  const [error, setError] = useState(null); // New state for error handling
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,18 +21,16 @@ const LoginPage = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ username, password }),
+          body: JSON.stringify({ username, password, mode }), // Include mode in the request
         }
       );
       if (response.ok) {
         const responseData = await response.json();
         setToken(responseData.token);
         setLoggedIn(true);
-        console.log(responseData.token);
       } else {
-        // If response is not OK, handle error
         const errorData = await response.json();
-        setError(errorData.message); // Assuming the API returns error message
+        setError(errorData.message);
       }
     } catch (error) {
       console.log(error);
@@ -55,8 +54,7 @@ const LoginPage = () => {
           X
         </Link>
         <h2>Login Page</h2>
-        {error && <p className="error-message">{error}</p>}{" "}
-        {/* Display error message if exists */}
+        {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit} className="formLogin">
           <label>
             Username
@@ -65,7 +63,6 @@ const LoginPage = () => {
               onChange={(event) => setUsername(event.target.value)}
             />
           </label>
-
           <label>
             Password
             <input
@@ -73,6 +70,16 @@ const LoginPage = () => {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
+          </label>
+          <label>
+            Mode:
+            <select
+              value={mode}
+              onChange={(event) => setMode(event.target.value)}
+            >
+              <option value="student">Student</option>
+              <option value="professor">Professor</option>
+            </select>
           </label>
           <button type="submit">Log in</button>
         </form>

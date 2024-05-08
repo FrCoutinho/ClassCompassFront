@@ -8,6 +8,10 @@ const PrivateRoute = ({ children }) => {
   if (!token) {
     return <Navigate to="/login" />;
   }
+  if (isProfessor && role !== "professor") {
+    // Redirect if the user is not a professor
+    return <Navigate to="/" />;
+  }
 
   return children;
 };
