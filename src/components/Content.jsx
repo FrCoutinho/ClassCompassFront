@@ -30,21 +30,16 @@ function Content() {
         <h3>4,8 / 5 -- by professors in the World</h3>
         <img src={raiting} alt="raiting" height={150} />
       </div>
-      {/*--*/}
+      {/*--------------------------------------------------*/}
       <div className="Content2"></div>
-      <img classNAme="imgCont" src={teacher} alt="teacher" height={260} />
+      <img src={teacher} alt="teacher" height={260} />
       <Link to="/allteachers" className="nav-links">
         <h2 className="Maintitle2">Teachers</h2>
         <p className="Maintitle3">
           Unlock your creativity with expert guidance.
         </p>
       </Link>
-      <img
-        classNAme="imgCont"
-        src={classImage}
-        alt="classImage2"
-        height={260}
-      />
+      <img src={classImage} alt="classImage2" height={260} />
       <Link to="/classes" className="nav-links">
         <h2 className="Maintitle2">Classes</h2>
         <p className="Maintitle3">
@@ -60,7 +55,7 @@ function Content() {
       >
         Be one off us:
       </h2>
-      {/* */}
+      {/*--------------------------------------------------- */}
       <div className="Content4">
         <div>
           <img src={student} alt="student" height={260} />
@@ -71,7 +66,7 @@ function Content() {
             </p>
           </Link>
         </div>
-        {/* */}
+        {/* --------------------------------------------------*/}
         <div className="Aval">
           <h3>5/5</h3>
           <p>Best Teachs with the best rating in the market</p>
@@ -140,7 +135,7 @@ function Content() {
           </Link>
         </div>
       </div>
-      {/* Feedback Form */}
+      {/*---------------------------------------------------- Feedback Form */}
       <div className="feedback-container">
         <h2>Feedback</h2>
         <form onSubmit={handleSubmit}>

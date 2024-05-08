@@ -7,7 +7,6 @@ div.divLogin {
   background-color: #f8f9fa;
 }
 
-/* Styles for the background element */
 .backgroundSignup,
 .backgroundLogin {
   position: fixed;
@@ -15,44 +14,41 @@ div.divLogin {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("path/to/your/image.jpg"); /* Replace with your background image path */
-  background-size: cover;
+  background-image: url("path/to/your/image.jpg"); 
   background-position: center;
   opacity: 0.3;
 }
 
-/* Styles for the card element */
+
 .cardSignup,
 .cardLogin {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px; /* Adjust width as needed */
+  width: 400px; 
   padding: 30px;
-  background-color: #fff; /* Light background */
+  background-color: #fff; 
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
-/* Styles for the h2 element */
 .cardSignup h2,
 .cardLogin h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: #1c3720 /* Use the same color for both forms */
+  color: #1c3720 
 }
 
-/* Styles for the error message paragraph */
+
 .cardSignup p,
 .cardLogin p {
-  color: #1c3720; /* Use the same color for both forms */
+  color: #1c3720; 
   margin-bottom: 10px;
 }
 
-/* Styles for the form element */
 .cardSignup form,
 .cardLogin form {
   display: flex;
@@ -60,7 +56,7 @@ div.divLogin {
   gap: 10px;
 }
 
-/* Styles for the input elements */
+
 .cardSignup input,
 .cardLogin input {
   padding: 10px;
@@ -69,11 +65,11 @@ div.divLogin {
   font-size: 16px;
 }
 
-/* Styles for the button element */
+
 .cardSignup button,
 .cardLogin button {
   padding: 10px 20px;
-  background-color: #1c3720; /* Use the same color for both forms */
+  background-color: #1c3720; 
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -84,10 +80,9 @@ div.divLogin {
 
 .cardSignup button:hover,
 .cardLogin button:hover {
-  background-color: #1c3720; /* Use the same hover color for both forms */
+  background-color: #1c3720; 
 }
 
-/* Styles specific to the login form (optional) */
 .cardLogin footer {
   text-align: center;
   margin-top: 20px;
@@ -106,27 +101,26 @@ div.divLogin {
 
 
 /*-----------------------------------------------Login------*/
-/* Styles for the body element */
+
 body.bodyLogin {
   margin: 0;
   padding: 0;
   font-family: sans-serif; 
   background-color: #f8f9fa; 
 }
-/* Styles for the backgroundLogin element */
+
 .backgroundLogin {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("path/to/your/image.jpg"); /* Replace with your background image path */
+  background-image: url("path/to/your/image.jpg"); 
   background-size: cover;
   background-position: center;
   opacity: 0.3; 
 }
 
-/* Styles for the cardLogin element */
 .cardLogin {
   position: absolute;
   top: 50%;
@@ -139,7 +133,7 @@ body.bodyLogin {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
-/* Styles for the h2 element */
+
 .cardLogin h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -148,20 +142,19 @@ body.bodyLogin {
   color: #1c3720; 
 }
 
-/* Styles for the error message paragraph */
+
 .cardLogin p {
   color: #1c3720; 
   margin-bottom: 10px;
 }
 
-/* Styles for the formLogin element */
+
 .cardLogin form {
   display: flex;
   flex-direction: column;
   gap: 10px; 
 }
 
-/* Styles for the input elements */
 .cardLogin input {
   padding: 10px;
   border: 1px solid #ccc;
@@ -169,7 +162,6 @@ body.bodyLogin {
   font-size: 16px;
 }
 
-/* Styles for the button element */
 .cardLogin button {
   padding: 10px 20px;
   background-color: #1c3720;
@@ -185,7 +177,7 @@ body.bodyLogin {
   background-color: #1c3720; 
 }
 
-/* Styles for the footer element */
+
 .cardLogin footer {
   text-align: center;
   margin-top: 20px;
@@ -390,7 +382,7 @@ a {
   margin-bottom: 200px;
 }
 
-/* Media query for smaller screens */
+
 @media (max-width: 768px) {
   .Content2 {
     padding-top: 50px;
@@ -447,46 +439,45 @@ a {
   border: #0b0a0a solid 2px ;
 
 }
-/* Styling for the main container */
+
 .Content5 {
   text-align: center;
-  background-color: #f9f9f9; /* Background color */
+  background-color: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
 }
 
-/* Styling for the main title */
+
 .Content5 h2 {
   font-size: 28px;
-  color: #333; /* Title color */
+  color: #333; 
   margin-bottom: 20px;
 }
 
-/* Styling for the image */
 .Content5 img {
   width: auto;
   height: 260px;
   margin-bottom: 20px;
 }
 
-/* Styling for the link */
+
 .Content5 .nav-links {
   text-decoration: none;
-  color: #28a745; /* Link color */
+  color: #28a745; 
 }
 
-/* Styling for the main title within the link */
+
 .Content5 h2 {
   font-size: 24px;
-  color: #28a745; /* Title color */
+  color: #28a745; 
   margin-bottom: 10px;
 }
 
-/* Styling for the paragraph */
+
 .Content5 p {
   font-size: 16px;
-  color: #666; /* Text color */
+  color: #666;
 }
 
 
@@ -871,7 +862,6 @@ body{
   border-radius: 5px;
 }
 
-/* Optional: Add styles for the select box */
 .teacher-input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -889,22 +879,21 @@ body{
  /*-----footer-------*/
 
  .footer {
-  background-color: #f2f2f2; /* Adjust background color as desired */
-  padding: 1rem 2rem; /* Adjust padding for spacing */
-  text-align: center; /* Center the content within the footer */
+  background-color: #f2f2f2;
+  padding: 1rem 2rem; 
+  text-align: center; 
 }
 
 .copyright {
-  font-size: 0.8rem; /* Adjust font size for smaller footprint */
-  color: #333; /* Adjust text color as desired */
+  font-size: 0.8rem; 
+  color: #333; 
 }
 
 .copyright a {
-  color: #666; /* Adjust link color as desired */
-  text-decoration: none; /* Remove underline initially */
+  color: #666;
+  text-decoration: none; 
 }
 
 .copyright a:hover {
-  text-decoration: underline; /* Add underline on hover */
-  cursor: pointer; /* Indicate clickable behavior */
+  text-decoration: underline;
 }
