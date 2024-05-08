@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AllStudents = () => {
   const [students, setStudents] = useState([]);
@@ -49,6 +50,9 @@ const AllStudents = () => {
               <p>Experience Years: {student.experience_years}</p>
               <p>Email: {student.email}</p>
             </div>
+            <Link to={`/classes`} className="btn">
+              Classes
+            </Link>
           </div>
         ))}
       </div>

@@ -32,15 +32,20 @@ function Content() {
       </div>
       {/*--*/}
       <div className="Content2"></div>
-      <img src={teacher} alt="teacher" height={260} />
+      <img classNAme="imgCont" src={teacher} alt="teacher" height={260} />
       <Link to="/allteachers" className="nav-links">
         <h2 className="Maintitle2">Teachers</h2>
         <p className="Maintitle3">
           Unlock your creativity with expert guidance.
         </p>
       </Link>
-      <img src={classImage} alt="classImage2" height={260} />
-      <Link to="/class" className="nav-links">
+      <img
+        classNAme="imgCont"
+        src={classImage}
+        alt="classImage2"
+        height={260}
+      />
+      <Link to="/classes" className="nav-links">
         <h2 className="Maintitle2">Classes</h2>
         <p className="Maintitle3">
           Discover how Class Compass can unlock your educational potential.
@@ -118,7 +123,7 @@ function Content() {
         <div className="beOne">
           <h2>You can be a teacher too.....</h2>
           <img src={creatClass} alt="teacher" height={260} />
-          <Link to="/addteachers" className="nav-links">
+          <Link to="/addteacher" className="nav-links">
             <h2>New Teachers</h2>
             <p>Join a supportive community of educators.</p>
           </Link>

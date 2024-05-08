@@ -8,7 +8,7 @@ const AddTeacher = () => {
   const [experienceYears, setExperienceYears] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [photo, setPhoto] = useState(null); // Novo estado para a foto
+  const [photo, setPhoto] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
   const navigate = useNavigate();
@@ -43,7 +43,6 @@ const AddTeacher = () => {
       }
     }
 
-    // Append photo separately if it exists
     if (photo) {
       formData.append("photo", photo);
     }

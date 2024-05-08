@@ -5,11 +5,12 @@ import Login from "./pages/LoginPage";
 import Navbar from "./components/Navbar";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
-import AllTeachers from "./pages/AllTeachers";
 import AddTeacher from "./pages/AddTeacher";
 import AddClass from "./pages/addClass";
 import AddStudent from "./pages/AddStudent";
 import AllStudents from "./pages/AllStudents";
+import AllTeachers from "./pages/AllTeachers";
+import AllClasses from "./pages/AllClasses";
 import { Navigate } from "react-router-dom";
 
 import "./App.css";
@@ -39,7 +40,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/allteachers" element={<AllTeachers />} />
           <Route
-            path="/addteachers"
+            path="/addteacher"
             element={
               <PrivateRoute>
                 {" "}
@@ -65,6 +66,7 @@ function App() {
           />
           <Route path="/class" element={<AllStudents />} />
           <Route path="/classes/:id" element={<AddClass />} />
+          <Route path="/classes" element={<AllClasses />} />
           <Route path="*" element={<h1>404 page</h1>} />
         </Routes>
         <Footer />

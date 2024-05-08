@@ -11,6 +11,11 @@ const AddClass = () => {
   const handleSubjectChange = (e) => setSubject(e.target.value);
   const handleProfessorChange = (e) => setProfessor(e.target.value);
 
+  const professors = [
+    { id: 1, name: "Professor 1" },
+    { id: 2, name: "Professor 2" },
+  ];
+
   async function handleFormSubmit(e) {
     e.preventDefault();
 
@@ -58,15 +63,20 @@ const AddClass = () => {
           <option value="History">History</option>
           <option value="Others">Others</option>
         </select>
-        <input
-          type="text"
+        <select
           value={professor}
           onChange={handleProfessorChange}
-          placeholder="Professor"
           className="class-input"
-        />
-        <button type="submit" className="class-submit">
-          Submit
+        >
+          <option value="">Select</option>
+          {professors.map((prof) => (
+            <option key={prof.id} value={prof.id}>
+              {prof.name}
+            </option>
+          ))}
+        </select>
+        <button type="submit" className="class-submit" disabled={submitted}>
+          {submitted ? "Submitting..." : "Submit"}
         </button>
       </form>
       {submitted && (

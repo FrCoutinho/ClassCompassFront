@@ -38,7 +38,7 @@ const AddStudent = () => {
       if (response.ok) {
         const data = await response.json();
         setSubmitted(true);
-        setTimeout(() => navigate("/allstudents"), 250);
+        setTimeout(() => navigate("/class"), 250);
       } else {
         // Handle error response
       }

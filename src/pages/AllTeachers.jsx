@@ -48,7 +48,7 @@ const AllTeachers = () => {
               <p className="card__category">Subject: {teacher.subject}</p>
               <p>Experience Years: {teacher.experience_years}</p>
               <p>Email: {teacher.email}</p>
-              <Link to={`/classes/${teacher._id}`} className="btn">
+              <Link to={`/addclass`} className="btn">
                 Add Class
               </Link>
             </div>

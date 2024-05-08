@@ -358,21 +358,45 @@ a {
   font-size: 100px;
   text-align: center;
 }
-.Content2{
-  padding: 50px;
+
+.Content2 {
   display: flex;
-  justify-content: center;
-  border: #0b0a0a solid 2px ;
-  
+  flex-direction: column;
+  align-items: center;
 }
-.Maintitle2{
-  font-family: 'KG Primary Penmanship';
-  font-size: 30px;
+
+
+.nav-links {
+  text-decoration: none;
+  color: black;
+  text-align: center;
 }
-.Maintitle3{
-  font-family: 'KG Primary Penmanship';
-  font-size: 20px;
+
+.Maintitle2 {
+  font-family: "KG Primary Penmanship", sans-serif;
+  font-size: 24px;
+  margin-bottom: 5px;
 }
+
+
+.Maintitle3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+.imgCont {
+  position: center;
+  margin-bottom: 200px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .Content2 {
+    padding-top: 50px;
+  }
+}
+
 
 .feedback-container {
   margin-top: 20px;
