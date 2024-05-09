@@ -7,30 +7,26 @@ const AllTeachers = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    async function fetchTeachers() {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/professor/professors`
-        );
-        if (response.ok) {
-          const data = await response.json();
-          setTeachers(data);
-          setLoading(false);
-        } else {
-          console.log("Failed to fetch teachers:", response.status);
-        }
-      } catch (error) {
-        console.log("Error fetching teachers:", error);
+  const fetchTeachers = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/professor/professors`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setTeachers(data);
+        setLoading(false);
+      } else {
+        console.log("Failed to fetch teachers:", response.status);
       }
+    } catch (error) {
+      console.log("Error fetching teachers:", error);
     }
+  };
 
+  useEffect(() => {
     fetchTeachers();
   }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   const handleDelete = async (teacher_id) => {
     try {
@@ -38,7 +34,9 @@ const AllTeachers = () => {
         `${import.meta.env.VITE_API_URL}/professor/professors/${teacher_id}`,
         { method: "DELETE" }
       );
-
+      if (response.ok) {
+        await fetchTeachers();
+      }
       setTimeout(() => {
         navigate("/allteachers");
       }, 250);
@@ -102,6 +100,11 @@ const AllTeachers = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div>
+        <Link to={"/addteacher"} className="btn">
+          Add Teacher
+        </Link>
       </div>
     </div>
   );
