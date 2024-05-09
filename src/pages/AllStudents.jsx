@@ -40,7 +40,7 @@ const AllStudents = () => {
             <img
               className="card__background"
               src={student.photo}
-              alt={student.name} // Adicionado para acessibilidade
+              alt={student.name}
               style={{ width: "300px", height: "400px" }}
             />
 
@@ -53,6 +53,15 @@ const AllStudents = () => {
             <Link to={`/classes`} className="btn">
               Classes
             </Link>
+            <button
+              className="student-delete"
+              type="deleteButton"
+              onClick={(event) => {
+                handleDelete(teacher._id, event);
+              }}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </div>

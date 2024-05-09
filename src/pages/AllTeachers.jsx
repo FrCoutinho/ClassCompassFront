@@ -32,6 +32,35 @@ const AllTeachers = () => {
     return <div>Loading...</div>;
   }
 
+  const handleDelete = async (teacher_id) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/professor/professors/${teacher_id}`,
+        { method: "DELETE" }
+      );
+
+      setTimeout(() => {
+        navigate("/allteachers");
+      }, 250);
+    } catch (error) {
+      console.log("Error deleting teacher:", error);
+    }
+  };
+  const handleUpdate = async (teacher_id) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/professor/professors/${teacher_id}`,
+        { method: "PUT" }
+      );
+
+      setTimeout(() => {
+        navigate("/addteacher");
+      }, 250);
+    } catch (error) {
+      console.log("Error updating teacher:", error);
+    }
+  };
+
   return (
     <div className="hero-section">
       <div className="card-grid">
@@ -51,8 +80,24 @@ const AllTeachers = () => {
               <Link to={`/addclass`} className="btn">
                 Add Class
               </Link>
-              <button type="deleteButton" className="student-delete">
+              <button
+                className="student-delete"
+                type="deleteButton"
+                onClick={(event) => {
+                  handleDelete(teacher._id, event);
+                }}
+              >
                 Delete
+              </button>
+              <br></br>
+              <button
+                className="student-edit"
+                type="editButton"
+                onClick={(event) => {
+                  handleUpdate(teacher._id, event);
+                }}
+              >
+                Edit
               </button>
             </div>
           </div>

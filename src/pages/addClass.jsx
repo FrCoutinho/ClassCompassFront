@@ -101,7 +101,7 @@ const AddClass = () => {
       if (response.ok) {
         const data = await response.json();
         setTimeout(() => {
-          navigate("/allclasses");
+          navigate("/classes");
         }, 250);
         setSubmitted(true);
       }
