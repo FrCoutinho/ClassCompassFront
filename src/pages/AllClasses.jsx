@@ -6,22 +6,21 @@ const AllClasses = () => {
   const [classes, setClasses] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchClasses = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/classes`);
-        if (response.ok) {
-          const allClasses = await response.json();
-          console.log(allClasses);
-          setClasses(allClasses);
-        } else {
-          console.log("Failed to fetch classes:", response.status);
-        }
-      } catch (error) {
-        console.error("Error fetching classes:", error);
+  const fetchClasses = async () => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/classes`);
+      if (response.ok) {
+        const allClasses = await response.json();
+        console.log(allClasses);
+        setClasses(allClasses);
+      } else {
+        console.log("Failed to fetch classes:", response.status);
       }
-    };
-
+    } catch (error) {
+      console.error("Error fetching classes:", error);
+    }
+  };
+  useEffect(() => {
     fetchClasses();
   }, []);
 
@@ -30,6 +29,9 @@ const AllClasses = () => {
       await fetch(`${import.meta.env.VITE_API_URL}/class/classes/${class_id}`, {
         method: "DELETE",
       });
+      if (response.ok) {
+        await fetchTeachers();
+      }
 
       setTimeout(() => {
         navigate("/classes");
@@ -53,6 +55,10 @@ const AllClasses = () => {
     }
   };
 
+  const handlePresenceCheck = (classId, studentId) => {
+    console.log(`Class ID: ${classId}, Student ID: ${studentId}`);
+  };
+
   return (
     <div className="hero-section">
       <div className="card-grid">
@@ -65,25 +71,37 @@ const AllClasses = () => {
                 style={{ width: "300px", height: "400px" }}
               />
               <div className="card__content">
-                <p>
+                <div>
                   <strong className="card__heading">Subject:</strong>{" "}
                   {classItem.subject}
-                </p>
-                <p>
+                </div>
+                <div>
                   <strong className="card__category">Professor:</strong>{" "}
                   {classItem.professor.name}
-                </p>
-                <p>
-                  <strong className="card__category">Student:</strong>{" "}
-                  {classItem.student.map((student) => student.name)}
-                </p>
-                <button onClick={() => handleUpdate(classItem._id)}>
-                  Edit
-                </button>
-                <br></br>
+                </div>
+                <div>
+                  <strong className="card__category">Students:</strong>{" "}
+                </div>
+
                 <button onClick={() => handleDelete(classItem._id)}>
                   Delete
                 </button>
+                {classItem.students ? (
+                  classItem.students.map((student) => (
+                    <div key={student._id}>
+                      <p>{student.name}</p>
+                      <button
+                        onClick={() =>
+                          handlePresenceCheck(classItem._id, student._id)
+                        }
+                      >
+                        Check Presence
+                      </button>
+                    </div>
+                  ))
+                ) : (
+                  <p>No students enrolled</p>
+                )}
               </div>
             </li>
           ))}

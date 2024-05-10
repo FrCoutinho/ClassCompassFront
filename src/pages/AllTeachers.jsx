@@ -46,14 +46,7 @@ const AllTeachers = () => {
   };
   const handleUpdate = async (teacher_id) => {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/professor/professors/${teacher_id}`,
-        { method: "PUT" }
-      );
-
-      setTimeout(() => {
-        navigate("/addteacher");
-      }, 250);
+      navigate(`/updateTeacher?teacherId=${teacher_id}`);
     } catch (error) {
       console.log("Error updating teacher:", error);
     }
@@ -75,7 +68,7 @@ const AllTeachers = () => {
               <p className="card__category">Subject: {teacher.subject}</p>
               <p>Experience Years: {teacher.experience_years}</p>
               <p>Email: {teacher.email}</p>
-              <Link to={`/addclass`} className="btn">
+              <Link to={`/addclass?teacherId=${teacher._id}`} className="btn">
                 Add Class
               </Link>
               <button

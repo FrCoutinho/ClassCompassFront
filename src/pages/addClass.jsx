@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddClass = () => {
   const [subject, setSubject] = useState("");
-  const [professor, setProfessor] = useState("");
+  const [professor, setProfessor] = useState();
   const [submitted, setSubmitted] = useState(false);
   const [professors, setProfessors] = useState([]);
   const [studentId, setStudentId] = useState("");
@@ -11,15 +11,18 @@ const AddClass = () => {
   const [students, setStudents] = useState([]);
   const navigate = useNavigate();
 
+  const query = new URLSearchParams(window.location.search);
+  const teacherId = query.get("teacherId");
+
   useEffect(() => {
     const fetchProfessors = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/professor/professors`
+          `${import.meta.env.VITE_API_URL}/professor/professors/${teacherId}`
         );
         if (response.ok) {
           const data = await response.json();
-          setProfessors(data);
+          setProfessor(data);
         } else {
           console.error("Failed to fetch professors");
         }
@@ -129,7 +132,7 @@ const AddClass = () => {
         </select>
         <h2 style={{ fontFamily: "Learning Curve" }}>Professor:</h2>
         <select
-          value={professor}
+          value={professor.name}
           onChange={handleProfessorChange}
           className="class-input"
         >

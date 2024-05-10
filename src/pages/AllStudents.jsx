@@ -27,6 +27,22 @@ const AllStudents = () => {
 
     fetchStudents();
   }, []);
+  const handleDelete = async (student_id) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/student/students/${teacher_id}`,
+        { method: "DELETE" }
+      );
+      if (response.ok) {
+        await fetchStudent();
+      }
+      setTimeout(() => {
+        navigate("/class");
+      }, 250);
+    } catch (error) {
+      console.log("Error deleting student:", error);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -57,7 +73,7 @@ const AllStudents = () => {
               className="student-delete"
               type="deleteButton"
               onClick={(event) => {
-                handleDelete(teacher._id, event);
+                handleDelete(student._id, event);
               }}
             >
               Delete
