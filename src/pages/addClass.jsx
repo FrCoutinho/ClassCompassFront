@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 const AddClass = () => {
   const [subject, setSubject] = useState("");
-  const [professor, setProfessor] = useState();
   const [submitted, setSubmitted] = useState(false);
+  const [professor, setProfessor] = useState(() => {});
   const [professors, setProfessors] = useState([]);
   const [studentId, setStudentId] = useState("");
   const [student, setStudent] = useState(null);
@@ -18,11 +18,11 @@ const AddClass = () => {
     const fetchProfessors = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/professor/professors/${teacherId}`
+          `${import.meta.env.VITE_API_URL}/professor/professors`
         );
         if (response.ok) {
           const data = await response.json();
-          setProfessor(data);
+          setProfessors(data);
         } else {
           console.error("Failed to fetch professors");
         }
@@ -30,6 +30,23 @@ const AddClass = () => {
         console.error("Error fetching professors:", error);
       }
     };
+
+    const fetchProfessorById = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/professor/professors/${teacherId}`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setProfessor(data);
+        } else {
+          console.error(`Failed to fetch professor with id ${teacherId}`);
+        }
+      } catch (error) {
+        console.error("Error fetching professor:", error);
+      }
+    };
+
     const fetchStudents = async () => {
       try {
         const response = await fetch(
@@ -48,6 +65,7 @@ const AddClass = () => {
     };
 
     fetchProfessors();
+    fetchProfessorById();
     fetchStudents();
   }, []);
 
@@ -132,7 +150,7 @@ const AddClass = () => {
         </select>
         <h2 style={{ fontFamily: "Learning Curve" }}>Professor:</h2>
         <select
-          value={professor.name}
+          value={professor}
           onChange={handleProfessorChange}
           className="class-input"
         >
