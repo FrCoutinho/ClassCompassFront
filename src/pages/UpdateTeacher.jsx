@@ -22,6 +22,7 @@ const UpdateTeacher = () => {
 
   useEffect(() => {
     const fetchTeacher = async () => {
+      console.log("TeacherID inside the Update Teacher", teacherId);
       try {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/professor/professors/${teacherId}`
