@@ -100,15 +100,7 @@ const UpdateTeacher = () => {
           <option value="History">History</option>
           <option value="Others">Others</option>
         </select>
-        <h2 style={{ fontFamily: "Learning Curve" }}>Experience Years:</h2>
-        <input
-          type="number"
-          value={teacher.experienceYears}
-          onChange={handleChange}
-          name="experienceYears"
-          placeholder="Experience Years"
-          className="teacher-input"
-        />
+
         <h2 style={{ fontFamily: "Learning Curve" }}>Email:</h2>
         <input
           type="email"
@@ -118,13 +110,7 @@ const UpdateTeacher = () => {
           placeholder="Email"
           className="teacher-input"
         />
-        <h2 style={{ fontFamily: "Learning Curve" }}>Add Photo:</h2>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleChange}
-          className="teacher-input"
-        />
+
         <button type="submit" className="teacher-submit">
           Submit
         </button>

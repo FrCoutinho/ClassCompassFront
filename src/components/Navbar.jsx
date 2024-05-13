@@ -11,28 +11,6 @@ const Navbar = () => {
         </Link>
         <ul className="menu">
           {/* Classes Dropdown */}
-          <li className="nav-item dropdown">
-            <Link to="/classes" className="nav-links dropdown-toggle">
-              Clases
-            </Link>
-            <ul className="submenu">
-              <li className="dropdown-item">
-                <Link to="/classes/mathematics">Mathematics</Link>
-              </li>
-              <li className="dropdown-item">
-                <Link to="/classes/english">English</Link>
-              </li>
-              <li className="dropdown-item">
-                <Link to="/classes/french">French</Link>
-              </li>
-              <li className="dropdown-item">
-                <Link to="/classes/programming">Programming</Link>
-              </li>
-              <li className="dropdown-item">
-                <Link to="/classes/programming">Others...</Link>
-              </li>
-            </ul>
-          </li>
 
           {/* Signup */}
           <li className="nav-item signup">
