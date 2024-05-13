@@ -66,9 +66,30 @@ function App() {
             }
           />
           <Route path="/class" element={<AllStudents />} />
-          <Route path="/updateTeacher" element={<UpdateTeacher />} />
-          <Route path="/classes/:id" element={<AddClass />} />
-          <Route path="/classes" element={<AllClasses />} />
+          <Route
+            path="/updateTeacher"
+            element={
+              <PrivateRoute>
+                <UpdateTeacher />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/classes/:id"
+            element={
+              <PrivateRoute>
+                <AddClass />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/classes"
+            element={
+              <PrivateRoute>
+                <AllClasses />
+              </PrivateRoute>
+            }
+          />
 
           <Route path="*" element={<h1>404 page</h1>} />
         </Routes>

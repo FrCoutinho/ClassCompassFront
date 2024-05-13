@@ -34,14 +34,30 @@ function Content() {
       </div>
       {/*--------------------------------------------------*/}
       <div className="Content2"></div>
-      <img src={teacher} alt="teacher" height={260} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={teacher} alt="teacher" height={260} />
+      </div>
       <Link to="/allteachers" className="nav-links">
         <h2 className="Maintitle2">Teachers</h2>
         <p className="Maintitle3">
           Unlock your creativity with expert guidance.
         </p>
       </Link>
-      <img src={classImage} alt="classImage2" height={260} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <img src={classImage} alt="classImage2" height={260} />
+      </div>
       <Link to="/classes" className="nav-links">
         <h2 className="Maintitle2">Classes</h2>
         <p className="Maintitle3">

@@ -132,6 +132,25 @@ const AddTeacher = () => {
           Submit
         </button>
       </form>
+      <div
+        className="Maintitle2"
+        style={{ textAlign: "center", margin: "50px 150px 150px 150px" }}
+      >
+        <p>
+          This app is your ultimate teaching companion. From managing your class
+          schedule and attendance to creating engaging lessons and sharing
+          resources,ClassCompass will streamline your workflow and empower you
+          to focus on what matters most: your students!
+        </p>
+
+        <p>
+          Explore the app and discover helpful tools to make your teaching
+          journey a success. We're confident you'll find ClassCompass an
+          invaluable resource for both you and your students.
+        </p>
+
+        <p>Let's get started!</p>
+      </div>
       {submitted && (
         <div className="teacher-message">
           <p>

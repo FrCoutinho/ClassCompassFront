@@ -14,7 +14,8 @@ const UpdateTeacher = () => {
   const [teachers, setTeachers] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  // const { teacherId } = useParams();
+
+  //const { teacherId } = useParams();
 
   const query = new URLSearchParams(window.location.search);
   const teacherId = query.get("teacherId");
@@ -117,16 +118,6 @@ const UpdateTeacher = () => {
           placeholder="Email"
           className="teacher-input"
         />
-        {/* <h2 style={{ fontFamily: "Learning Curve" }}>Password:</h2>
-        <input
-          type="password"
-          value={teacher.password}
-          onChange={handleChange}
-          name="password"
-          placeholder="Password"
-          className="teacher-input"
-        /> */}
-        {/* Cupload de foto */}
         <h2 style={{ fontFamily: "Learning Curve" }}>Add Photo:</h2>
         <input
           type="file"

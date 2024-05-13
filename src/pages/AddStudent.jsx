@@ -100,6 +100,26 @@ const AddStudent = () => {
           Submit
         </button>
       </form>
+      <div className="Maintitle2">
+        <p>Welcome to ClassCompass, New Student! </p>
+        <br></br>
+        <p>
+          Feeling a little lost on your first day? Don't worry, we've all been
+          there. The ClassCompass app is here to be your guide!
+        </p>
+        <br></br>
+        <p>
+          In this app, you'll find everything you need to navigate your new
+          journey as a student. From finding your classes and getting to know
+          your teachers, to joining clubs and connecting with classmates,
+          ClassCompass is your one-stop shop for a smooth transition.
+        </p>
+        <br></br>
+        <p>
+          Let's explore together! Dive into the app and unlock its amazing
+          features that will make your school experience awesome.
+        </p>
+      </div>
       {submitted && (
         <div className="student-message">
           <p>
