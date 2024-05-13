@@ -62,12 +62,13 @@ const UpdateTeacher = () => {
           body: JSON.stringify(teacher),
         }
       );
-      if (!response.ok) {
-        await fetchTeacher();
-      }
-      setTimeout(() => {
+      if (response.ok) {
+        const teacherData = await response.json();
+        setTeacher(teacherData);
         navigate("/allteachers");
-      }, 250);
+      } else {
+        console.error("Failed to update:", await response.json());
+      }
     } catch (error) {
       console.error("Error updating teacher data:", error);
     }
